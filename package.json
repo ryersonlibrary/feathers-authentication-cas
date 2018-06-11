@@ -1,0 +1,74 @@
+{
+  "name": "@rula/feathers-authentication-cas",
+  "description": "A Central Authentication Service (CAS) strategy for @feathersjs/authentication using Passport.",
+  "version": "1.0.0",
+  "main": "lib/",
+  "keywords": [
+    "feathers",
+    "feathers-plugin",
+    "cas",
+    "passport",
+    "authentication"
+  ],
+  "scripts": {
+    "publish": "git push origin --tags && npm run changelog && git push origin",
+    "release.pre": "npm version prerelease && npm publish --tag pre --access public",
+    "release.patch": "npm version patch && npm publish --access public",
+    "release.minor": "npm version minor && npm publish --access public",
+    "release.major": "npm version major && npm publish --access public",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "lint": "semistandard --fix",
+    "mocha": "mocha --opts mocha.opts",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
+    "test": "npm run lint && npm run coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryersonlibrary/feathers-authentication-cas.git"
+  },
+  "author": {
+    "name": "David Quast",
+    "email": "dquast@ryerson.ca"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryersonlibrary/feathers-authentication-cas/issues"
+  },
+  "semistandard": {
+    "sourceType": "module",
+    "env": [
+      "mocha"
+    ]
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "homepage": "https://github.com/ryersonlibrary/feathers-authentication-cas#readme",
+  "devDependencies": {
+    "@feathersjs/authentication": "^2.1.6",
+    "@feathersjs/feathers": "^3.1.6",
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "feathers-memory": "^2.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "semistandard": "^12.0.1",
+    "sinon": "^5.0.10",
+    "sinon-chai": "^3.1.0"
+  },
+  "dependencies": {
+    "@feathersjs/commons": "^1.4.1",
+    "@feathersjs/errors": "^3.3.0",
+    "@feathersjs/express": "^1.2.3",
+    "debug": "^3.1.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "lodash.merge": "^4.6.1",
+    "node-uuid": "^1.4.8",
+    "passport": "^0.4.0",
+    "underscore": "^1.9.1",
+    "url": "^0.11.0",
+    "util": "^0.10.4",
+    "xml2js": "^0.4.19"
+  }
+}
