@@ -1,7 +1,7 @@
 {
   "name": "@rula/feathers-authentication-cas",
   "description": "A Central Authentication Service (CAS) strategy for @feathersjs/authentication using Passport.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "lib/",
   "keywords": [
     "feathers",
